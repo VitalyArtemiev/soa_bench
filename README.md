@@ -16,3 +16,12 @@ test bench2_tup     ... bench:   2,050,475 ns/iter (+/- 336,076)<br/>
 test bench3_arr     ... bench:   1,915,052 ns/iter (+/- 436,021)<br/>
 test bench4_str     ... bench:   1,835,593 ns/iter (+/- 573,040)<br/>
 test bench5_str_add ... bench:   1,797,609 ns/iter (+/- 493,019)<br/>
+
+rpi4:<br/>
+running 6 tests<br/>
+test bench0         ... bench:  31,987,355 ns/iter (+/- 1,239,996)<br/>
+test bench1_sep     ... bench:  11,773,597 ns/iter (+/- 239,294)<br/>
+test bench2_tup     ... bench:  11,322,239 ns/iter (+/- 276,290)<br/>
+test bench3_arr     ... bench:  11,411,892 ns/iter (+/- 323,385)<br/>
+test bench4_str     ... bench:  11,378,227 ns/iter (+/- 196,606)<br/>
+test bench5_str_add ... bench:  11,303,888 ns/iter (+/- 270,529)<br/>
