@@ -8,6 +8,7 @@ edition = "2018"
 [dependencies]
 rand = "0.8.4"
 soa_derive = "0.10.0"
+derive_more = "0.99.16"
 
 [dev-dependencies]
 bencher = "0.1.5"

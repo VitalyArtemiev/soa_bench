@@ -1,4 +1,6 @@
 use soa_derive::StructOfArray;
+use derive_more::{Add, AddAssign, Sub, Display, From, Into};
+
 
 #[derive(StructOfArray, Default)]
 #[soa_derive = "Debug, PartialEq"]
@@ -54,9 +56,9 @@ pub struct Test3 {
     flags: usize
 }
 
-#[derive(Debug, PartialEq, Default)]
+#[derive(Debug, PartialEq, Default, Copy, Clone, Add, AddAssign)]
 pub struct Vec2i {pub x: i32, pub y: i32}
-#[derive(Debug, PartialEq, Default)]
+#[derive(Debug, PartialEq, Default, Copy, Clone, Add, AddAssign)]
 pub struct Vec3i {pub x: i32, pub y: i32, pub z: i32}
 
 #[derive(StructOfArray, Default)]

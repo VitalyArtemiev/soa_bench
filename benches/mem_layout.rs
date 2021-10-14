@@ -131,7 +131,29 @@ fn bench4_str(bench: &mut Bencher) {
     })
 }
 
+fn bench5_str_add(bench: &mut Bencher) {
+    let mut rng = rand::thread_rng();
+
+    let mut soa_vec = Test4Vec::with_capacity(NUM_OBJECTS);
+    for i in 0..NUM_OBJECTS {
+        soa_vec.push(Test4::default())
+    }
+
+    for mut s in soa_vec.iter_mut() {
+        s.vel.x += 1;
+        s.vel.y += -1;
+    }
+
+    bench.iter(||{
+        for mut s in soa_vec.iter_mut() {
+            s.vel.x += 1;
+            s.vel.y += -1;
+
+            *s.pos += *s.vel; }
+    })
+}
 
 
-benchmark_group!(benches, bench3_arr, bench1_sep, bench2_tup, bench0, bench4_str);
+
+benchmark_group!(benches, bench0, bench1_sep, bench3_arr,  bench2_tup,  bench4_str, bench5_str_add);
 benchmark_main!(benches);
