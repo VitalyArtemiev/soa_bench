@@ -1,5 +1,5 @@
 # soa_bench
-Local:<br/>
+R5 3600:<br/>
 running 6 tests<br/>
 test bench0         ... bench:   4,077,170 ns/iter (+/- 1,323,180)<br/>
 test bench1_sep     ... bench:   1,418,475 ns/iter (+/- 86,545)<br/>
@@ -7,6 +7,15 @@ test bench2_tup     ... bench:   1,054,175 ns/iter (+/- 106,501)<br/>
 test bench3_arr     ... bench:   1,052,810 ns/iter (+/- 243,650)<br/>
 test bench4_str     ... bench:   1,048,405 ns/iter (+/- 59,711)<br/>
 test bench5_str_add ... bench:   1,066,995 ns/iter (+/- 249,441)<br/>
+
+i7-4700HQ:<br/>
+running 6 tests<br/>
+test bench0         ... bench:   6,764,900 ns/iter (+/- 2,161,173)<br/>
+test bench1_sep     ... bench:   1,647,677 ns/iter (+/- 812,075)<br/>
+test bench2_tup     ... bench:   1,854,125 ns/iter (+/- 674,814)<br/>
+test bench3_arr     ... bench:   1,840,433 ns/iter (+/- 861,794)<br/>
+test bench4_str     ... bench:   1,863,556 ns/iter (+/- 894,384)<br/>
+test bench5_str_add ... bench:   1,785,895 ns/iter (+/- 939,358)<br/>
 
 CI:<br/>
 running 6 tests<br/>
