@@ -1,9 +1,8 @@
-#[macro_use]
-extern crate bencher;
-
-use bencher::Bencher;
+#![feature(test)]
+extern crate test;
 
 use rand::Rng;
+use test::Bencher;
 
 use soa_bench::types::{Aos, Test1, Test1Vec, Test2, Test2Vec, Test3, Test3Vec, Test4, Test4Vec};
 use soa_bench::types::Soa;
@@ -11,6 +10,7 @@ use soa_bench::types::SoaVec;
 
 const NUM_OBJECTS: usize = 1000000;
 
+#[bench]
 fn bench0(bench: &mut Bencher) {
     let mut rng = rand::thread_rng();
 
@@ -35,6 +35,7 @@ fn bench0(bench: &mut Bencher) {
     })
 }
 
+#[bench]
 fn bench1_sep(bench: &mut Bencher) {
     let mut rng = rand::thread_rng();
 
@@ -59,6 +60,7 @@ fn bench1_sep(bench: &mut Bencher) {
     })
 }
 
+#[bench]
 fn bench2_tup(bench: &mut Bencher) {
     let mut rng = rand::thread_rng();
 
@@ -83,6 +85,7 @@ fn bench2_tup(bench: &mut Bencher) {
     })
 }
 
+#[bench]
 fn bench3_arr(bench: &mut Bencher) {
     let mut rng = rand::thread_rng();
 
@@ -107,6 +110,7 @@ fn bench3_arr(bench: &mut Bencher) {
     })
 }
 
+#[bench]
 fn bench4_str(bench: &mut Bencher) {
     let mut rng = rand::thread_rng();
 
@@ -131,6 +135,7 @@ fn bench4_str(bench: &mut Bencher) {
     })
 }
 
+#[bench]
 fn bench5_str_add(bench: &mut Bencher) {
     let mut rng = rand::thread_rng();
 
@@ -152,8 +157,3 @@ fn bench5_str_add(bench: &mut Bencher) {
             *s.pos += *s.vel; }
     })
 }
-
-
-
-benchmark_group!(benches, bench0, bench1_sep, bench3_arr,  bench2_tup,  bench4_str, bench5_str_add);
-benchmark_main!(benches);

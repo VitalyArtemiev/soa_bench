@@ -1,9 +1,8 @@
-#[macro_use]
-extern crate bencher;
-
-use bencher::Bencher;
+#![feature(test)]
+extern crate test;
 
 use rand::Rng;
+use test::Bencher;
 
 use soa_bench::types::Aos;
 use soa_bench::types::Soa;
@@ -11,6 +10,7 @@ use soa_bench::types::SoaVec;
 
 const NUM_OBJECTS: usize = 1000000;
 
+#[bench]
 fn aos_bench(bench: &mut Bencher) {
     let mut rng = rand::thread_rng();
 
@@ -33,6 +33,7 @@ fn aos_bench(bench: &mut Bencher) {
     })
 }
 
+#[bench]
 fn soa_bench(bench: &mut Bencher) {
     let mut rng = rand::thread_rng();
 
@@ -67,6 +68,3 @@ fn soa_bench(bench: &mut Bencher) {
         }*/
     })
 }
-
-benchmark_group!(benches, aos_bench, soa_bench);
-benchmark_main!(benches);
