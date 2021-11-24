@@ -61,7 +61,7 @@ pub struct Vec2i {pub x: i32, pub y: i32}
 #[derive(Debug, PartialEq, Default, Copy, Clone, Add, AddAssign)]
 pub struct Vec3i {pub x: i32, pub y: i32, pub z: i32}
 
-#[derive(StructOfArray, Default)]
+#[derive(StructOfArray, Default, Debug)]
 #[soa_derive = "Debug, PartialEq"]
 pub struct Test4 {
     pos: Vec2i,

@@ -77,3 +77,69 @@ fn bench_for(bench: &mut Bencher) {
 
     black_box(soa_vec);
 }
+
+#[bench]
+fn bench_iter_obj(bench: &mut Bencher) {
+    let mut rng = rand::thread_rng();
+
+    let mut soa_vec = Test4Vec::with_capacity(NUM_OBJECTS);
+    for i in 0..NUM_OBJECTS {
+        soa_vec.push(Test4::default())
+    }
+
+    bench.iter(||{
+        let mut c= 0;
+        for mut s in soa_vec.iter_mut() {
+            *s.pos += Vec2i {
+                x: c % 65535, y: c % 65535 -1
+            };
+            c +=1;
+        }
+    });
+
+    black_box(soa_vec);
+}
+
+#[bench]
+fn bench_iter_pos(bench: &mut Bencher) {
+    let mut rng = rand::thread_rng();
+
+    let mut soa_vec = Test4Vec::with_capacity(NUM_OBJECTS);
+    for i in 0..NUM_OBJECTS {
+        soa_vec.push(Test4::default())
+    }
+
+    bench.iter(||{
+        let mut c= 0;
+        for mut p in soa_vec.pos.iter_mut() {
+            *p += Vec2i {
+                x: c % 65535, y: c % 65535 -1
+            };
+            c +=1;
+        }
+    });
+
+    black_box(soa_vec);
+}
+
+#[bench]
+fn bench_for_pos(bench: &mut Bencher) {
+    let mut rng = rand::thread_rng();
+
+    let mut soa_vec = Test4Vec::with_capacity(NUM_OBJECTS);
+    for i in 0..NUM_OBJECTS {
+        soa_vec.push(Test4::default())
+    }
+
+    bench.iter(||{
+        let mut c= 0;
+        for i in 0..soa_vec.len() {
+            soa_vec.pos[i] += Vec2i {
+                x: c % 65535, y: c % 65535 -1
+            };
+            c += 1;
+        }
+    });
+
+    black_box(soa_vec);
+}
