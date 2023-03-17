@@ -1,4 +1,12 @@
 # soa_bench
+R7 5800x3d:<br/>
+test bench0         ... bench:     709,223 ns/iter (+/- 48,817)
+test bench1_sep     ... bench:     253,021 ns/iter (+/- 5,868)
+test bench2_tup     ... bench:     651,710 ns/iter (+/- 18,180)
+test bench3_arr     ... bench:     697,710 ns/iter (+/- 10,620)
+test bench4_str     ... bench:     661,860 ns/iter (+/- 20,572)
+test bench5_str_add ... bench:     251,450 ns/iter (+/- 5,487)
+
 R5 3600:<br/>
 running 6 tests<br/>
 test bench0         ... bench:   4,077,170 ns/iter (+/- 1,323,180)<br/>
