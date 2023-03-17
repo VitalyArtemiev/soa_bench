@@ -238,18 +238,18 @@ dependencies = [
 
 [[package]]
 name = "soa_derive"
-version = "0.10.0"
+version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9530263f0a29b2abb4043c75378812ee56a350fa2d4ef7e94d7ef9bf02c450f7"
+checksum = "327b898354ca1a9e0386aa10b19f684d181ae273c0e8ce9ad22464e9fbe39322"
 dependencies = [
  "soa_derive_internal",
 ]
 
 [[package]]
 name = "soa_derive_internal"
-version = "0.10.1"
+version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a547806bd32c9f95bd46f82da149d5976e2beb476fb22c0a0c1eb4aa387f55b5"
+checksum = "7bcbaa3dd35156733d6754fa463a6852a51652deb71490e4c2b67b8c8f5535a9"
 dependencies = [
  "proc-macro2",
  "quote",
